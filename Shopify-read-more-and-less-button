@@ -1,0 +1,49 @@
+<script>
+var minimized_elements = $("#description_first");
+var minimize_character_count = 10;    
+
+minimized_elements.each(function(){    
+  var t = $(this).text();        
+  if(t.length < minimize_character_count ) return;
+
+  $(this).html(
+      t.slice(0,minimize_character_count )+
+      '<span>... </span><a href="#" class="read_more">Read more</a>'+
+      '<span style="display:none;">'+ t.slice(minimize_character_count ,t.length)+
+      '<a href="#" class="read_less">Read less</a></span>'
+    );  
+});
+
+$('a.read_more', minimized_elements).click(function(event){
+  event.preventDefault();
+  $(this).hide().prev().hide();
+  $(this).next().show();        
+});
+
+$('a.read_less', minimized_elements).click(function(event){
+  event.preventDefault();
+  $(this).parent().hide().prev().show().prev().show();    
+});
+  
+</script>
+
+
+<div id="description_first">
+Be aware <span>... </span><a href="#" class="read_more">Read more</a><span style="display:none;">that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
+
+Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
+
+Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
+
+Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
+
+Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
+
+Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
+
+<a href="#" class="read_less">Read less</a></span></div>
+
+
+Source:https://www.zyxware.com/articles/4565/how-to-create-a-read-more-and-read-less-option-for-page-description-using-js
+
+
