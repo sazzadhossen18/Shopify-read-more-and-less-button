@@ -1,3 +1,53 @@
+
+
+{% if collection.description.size > 700 %}
+   <div class="rte rte--collection-desc medium-up--four-fifths">
+<div class="enlarge-text product-description-short">
+{{ collection.description | truncate: 500, ". . . " }}<a class="readmore" href="#"> más</a>
+</div>
+<div class="enlarge-text product-description-full" style="display:none;">
+{{ collection.description }}
+<a class="readless" href="#" style="font-size:15px"> menos</a>
+</div>
+{% else %}
+ <div class="enlarge-text">
+    {{ collection.description }}
+ </div>
+  </div>
+{% endif %}
+              
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$('.readmore').click(function (event) {
+event.preventDefault();
+var descriptionFull = document.querySelector('.product-description-full');
+descriptionFull.style.display = 'block';
+var descriptionShort = document.querySelector('.product-description-short');
+descriptionShort.style.display = 'none';
+});
+$('.readless').click(function (event) {
+event.preventDefault();
+var descriptionFull = document.querySelector('.product-description-full');
+descriptionFull.style.display = 'none';
+var descriptionShort = document.querySelector('.product-description-short');
+descriptionShort.style.display = 'block';window.scrollTo({bottom: 110, behavior: 'smooth'});
+})
+</script>
+
+
+              
+     
+
+https://plaktheme.com/community/collection-page/add-read-more-button-to-the-collection-page/
+
+
+
+
+
+
+
+
+
 <script>
 var minimized_elements = $("#description_first");
 var minimize_character_count = 10;    
