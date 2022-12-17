@@ -1,4 +1,9 @@
 
+https://plaktheme.com/community/collection-page/add-read-more-button-to-the-collection-page/
+https://www.zyxware.com/articles/4565/how-to-create-a-read-more-and-read-less-option-for-page-description-using-js
+
+
+
 
 {% if collection.description.size > 700 %}
    <div class="rte rte--collection-desc medium-up--four-fifths">
@@ -38,62 +43,94 @@ descriptionShort.style.display = 'block';window.scrollTo({bottom: 110, behavior:
               
      
 
-https://plaktheme.com/community/collection-page/add-read-more-button-to-the-collection-page/
+
+2nd Method:
+=========================================================================================================================================================================
+https://www.jqueryscript.net/text/clip-overflowing-read-more.html
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>jQuery ReadAll Plugin Examples</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="../css/jquery.readall.css" rel="stylesheet" />
+    <style>
+        
+
+.readall-hide:after {
+    /* background: linear-gradient(to bottom, rgba(34,34,34, 0.1), #fff 198%); */
+    background-image: linear-gradient(0deg, #fff 10%, transparent)!important;
+}
+
+.readall-hide:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none!important;
+    right: 0;
+    width: 100%;
+    height: 100px!important;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), white 75%);
+}
 
 
 
+        .test {
+            font-size: 1em;
+            padding: 0 15px;
+        }
+        .container { margin: 150px auto; max-width: 960px; }
+       
+}
+    </style>
+</head>
+<body>
 
 
 
+    <div class="container">
+    
+    <div class="test">
 
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan sit amet eros in faucibus. Etiam posuere malesuada lacus quis tempor. Praesent non diam eros. Duis vestibulum, diam sed iaculis consectetur, lorem leo ullamcorper diam, mollis cursus sem metus in lectus. Nam interdum, tellus sed molestie tristique, libero ipsum pretium leo, quis fermentum massa odio vel velit. Proin ut molestie magna, non dapibus nisi. Vestibulum urna purus, aliquam et pulvinar eu, dictum id nulla. Duis venenatis, ex sit amet eleifend tempus, ex sem semper sapien, at sodales dui leo vel nunc. Sed ante nulla, rhoncus at lacus ut, pretium auctor mauris. Curabitur tellus neque, molestie vitae mi sed, commodo sagittis ligula. Etiam nec dignissim orci. Aliquam nunc dolor, elementum a urna eu, hendrerit blandit ipsum. Donec vel felis commodo, laoreet velit vestibulum, suscipit nibh. Ut ornare tristique felis non lobortis. Fusce elementum magna nibh, eu mollis nisl molestie sit amet. Etiam ut eleifend purus.
+        </p>
+         <h1>sss</h1>
+     
+    </div>
+    
+   
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-<script>
-var minimized_elements = $("#description_first");
-var minimize_character_count = 10;    
-
-minimized_elements.each(function(){    
-  var t = $(this).text();        
-  if(t.length < minimize_character_count ) return;
-
-  $(this).html(
-      t.slice(0,minimize_character_count )+
-      '<span>... </span><a href="#" class="read_more">Read more</a>'+
-      '<span style="display:none;">'+ t.slice(minimize_character_count ,t.length)+
-      '<a href="#" class="read_less">Read less</a></span>'
-    );  
-});
-
-$('a.read_more', minimized_elements).click(function(event){
-  event.preventDefault();
-  $(this).hide().prev().hide();
-  $(this).next().show();        
-});
-
-$('a.read_less', minimized_elements).click(function(event){
-  event.preventDefault();
-  $(this).parent().hide().prev().show().prev().show();    
-});
+    <script src="../js/jquery.readall.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.test').readall({
+                // Default values
+                showheight: 96,                         // height to show
+                showrows: null,                         // rows to show (overrides showheight)
+                animationspeed: 200,                    // speed of transition
+                btnTextShowmore: 'Read more',           // text shown on button to show more
+                btnTextShowless: 'Read less',           // text shown on button to show less
+                btnClassShowmore: 'readall-button',     // class(es) on button to show more
+                btnClassShowless: 'readall-button'      // class(es) on button to show less
+            });
+        });
+    </script>
   
-</script>
+</body>
+</html>
 
 
-<div id="description_first">
-Be aware <span>... </span><a href="#" class="read_more">Read more</a><span style="display:none;">that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
-
-Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
-
-Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
-
-Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
-
-Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
-
-Be aware that a retired Juniper Customer Care phone number is being used fraudulently. Customers calling this number are offered a cash rebate in exchange for information, including Juniper contract ID, email address, and credit card number. Juniper is not associated with this rebate offer and has no relationship with the company offering it.Juniper is working with the proper authorities in order to cease this inappropriate activity.Please update your records with the correct Customer Care number: 888-314-5822. Please also bookmark: https://www.juniper.net/support/requesting-support.html.
-
-<a href="#" class="read_less">Read less</a></span></div>
 
 
-Source:https://www.zyxware.com/articles/4565/how-to-create-a-read-more-and-read-less-option-for-page-description-using-js
+
+
 
 
